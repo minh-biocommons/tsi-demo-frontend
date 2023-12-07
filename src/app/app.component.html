@@ -1,0 +1,17 @@
+<div class="flex flex-col min-h-full h-full">
+  <app-sidebar (sidebarCollapsed)="handleSidebarCollapsed($event)"></app-sidebar>
+  <app-header [isSidebarCollapsed]="isSidebarCollapsed" (sidebarCollapsed)="handleSidebarCollapsed($event)"></app-header>
+  <div class="flex flex-col flex-1" [class.ml-14]="isSidebarCollapsed && isLoggedIn" [class.sm:ml-64]="!isSidebarCollapsed && isLoggedIn">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- <div class="flex min-h-full h-full">
+  <app-sidebar></app-sidebar>
+  <div class="flex flex-col grow">
+    <app-header></app-header>
+    <div class="flex flex-col flex-1">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div> -->

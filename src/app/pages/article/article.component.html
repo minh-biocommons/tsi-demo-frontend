@@ -1,0 +1,42 @@
+<div class="current-article">
+  <section *ngIf="article">
+    <div class="container">
+      <a routerLink="/" class="current-article__backlink">
+        <icon-back></icon-back>
+        <span>Back to Articles</span>
+      </a>
+      <h1 class="current-article__title">{{ article.title }}</h1>
+      <div class="current-article__detail">
+        <div class="current-article__wrapperOuter">
+          <div class="current-article__wrapperInner">
+            <div class="current-article__authorImage">
+              <img
+                [src]="article.author.avatar | getAssetUrl"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="current-article__authorName">
+                {{ article.author.first_name }} {{ article.author.last_name }}
+              </div>
+              <div class="current-article__time">
+                {{ article.publish_date }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="current-article_coverImage">
+          <img [src]="article.cover_image | getAssetUrl" alt="" />
+        </div>
+      </div>
+      <div class="current-article__body">
+        <div
+          class="current-article__bodyContent"
+          [innerHtml]="article.body"
+        ></div>
+      </div>
+    </div>
+  </section>
+  <app-more-articles [articles]="moreArticles"></app-more-articles>
+</div>

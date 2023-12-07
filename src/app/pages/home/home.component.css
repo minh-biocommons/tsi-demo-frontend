@@ -1,0 +1,28 @@
+:host {
+  flex-grow: 1;
+}
+
+.home ::ng-deep .test * {
+  all: revert;
+}
+
+.home ::ng-deep .test img {
+  max-width: 100%;
+}
+
+.home ::ng-deep .test table {
+  border-collapse: collapse;
+}
+
+.home ::ng-deep .test table tr td {
+  border: 1px solid lightgray;
+  padding: 6px;
+}
+
+.home ::ng-deep .mat-expansion-panel-body {
+  padding: 0;
+}
+
+.height-textbox {
+  height: 16px;
+}

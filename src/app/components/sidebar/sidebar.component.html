@@ -1,0 +1,81 @@
+<div *ngIf="isLoggedIn">
+  <button
+    data-drawer-target="logo-sidebar"
+    data-drawer-toggle="logo-sidebar"
+    aria-controls="logo-sidebar"
+    type="button"
+    class="inline-flex items-center mt-2 text-sm text-gray-500 rounded-md sm:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+  >
+    <span class="sr-only">Open sidebar</span>
+    <svg
+      class="w-6 h-6"
+      aria-hidden="true"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        fill-rule="evenodd"
+        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+      ></path>
+    </svg>
+  </button>
+
+  <aside
+    id="logo-sidebar"
+    class="fixed top-0 left-0 z-40 h-screen -translate-x-full sm:translate-x-0 transition duration-300 ease-in-out transform"
+    aria-label="Sidebar"
+    [ngClass]="{'w-14': isSidebarCollapsed, 'w-64': !isSidebarCollapsed}"
+  >
+    <div class="h-full overflow-y-auto bg-slate-100">
+      <!-- <a href="https://flowbite.com/" class="flex items-center pl-2.5 mb-5">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
+         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+      </a> -->
+      <div class="flex justify-end py-4 pr-4">
+        <button (click)="toggleSidebar()" class="transition duration-300 ease-in-out transform" [class.rotate-180]="isSidebarCollapsed">
+          <fa-icon
+            [icon]="faCircleChevronLeft"
+            size="lg"
+          ></fa-icon>
+        </button>
+      </div>
+      <div
+        class="px-8 pt-8 flex flex-col justify-center items-start"
+        [class.hidden]="isSidebarCollapsed"
+      >
+        <img
+          class="h-10 w-auto"
+          src="https://images.squarespace-cdn.com/content/v1/5d3a4213cf4f5b00014ea1db/1566802427746-GC0JCDWGK7G891LR2NQL/Australian-Biocommons-Logo-Horizontal-144dpi-Transparent.png"
+        />
+        <div class="text-l mt-2 font-medium tracking-tight text-gray-900">
+          Science Community Hub
+        </div>
+      </div>
+      <ul
+        class="space-y-2 mt-16 font-medium"
+        [class.hidden]="isSidebarCollapsed"
+      >
+        <li>
+          <a
+            href="#"
+            class="flex items-center px-6 py-4 text-gray-900 bg-slate-200"
+          >
+            <span>TSI Community</span>
+          </a>
+        </li>
+        <li>
+          <div
+            class="flex items-center px-6 py-4 text-gray-900"
+          >
+            <span class="w-1/3 bg-slate-200 h-4 shrink-0 mr-3"></span>
+            <span class="flex-1 whitespace-nowrap text-slate-300"
+              >Community</span
+            >
+        </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</div>
