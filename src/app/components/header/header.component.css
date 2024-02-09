@@ -3,5 +3,11 @@
 }
 
 .top-nav {
-  height: 52px;
+  height: 48px;
+  background-color: #205A86;
+}
+
+.bot-nav {
+  height: 120px;
+  background-color: #F2F2F2;
 }

@@ -1,3 +1,30 @@
 :host {
   flex-grow: 1;
 }
+
+.bg-hero {
+  background: url('../../../assets/big-genomic-data-visualization_green.png');
+  width: 100%;
+  max-width: 100%;
+  background-size: 100%;
+}
+
+.bg-button {
+  background-color: #17567E;
+}
+
+.bg-gray-custom {
+  background-color: #F2F2F2;
+}
+
+.text-link {
+  color: #205A86; 
+}
+
+.bg-footer {
+  background-color: #1D2944;
+}
+
+.hero {
+  height: calc(100vh - 48px - 120px);
+}

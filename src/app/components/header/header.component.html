@@ -54,7 +54,15 @@
         <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
-          <!-- Profile dropdown -->
+          <div *ngIf="!isLoggedIn" class="relative ml-4">
+            <div class="text-sm font-light text-white mt-0.5">
+              <a
+                href="https://directus.test.biocommons.org.au/backend/auth/login/cilogon?redirect=http://localhost:4200/login"
+                >Sign in</a
+              >&ensp;/&ensp;
+              <a routerLink="/signup">Register</a>
+            </div>
+          </div>
           <div *ngIf="isLoggedIn" class="relative ml-4">
             <div class="text-sm font-light text-gray-900">
               Signed in as <span class="font-medium">{{ currentUser }}</span>
@@ -105,7 +113,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full py-6 flex bg-teal-50 flex-row">
+    <div class="w-full py-4 flex flex-row bot-nav">
       <div
         class="flex"
         [ngClass]="{
@@ -114,15 +122,20 @@
         }"
       >
         <div
-          class="flex flex-col justify-center items-start pl-8"
+          class="flex justify-center items-center pl-8"
           [class.hidden]="isSidebarCollapsed && isLoggedIn"
         >
-          <img
-            class="h-10 w-auto"
-            src="https://images.squarespace-cdn.com/content/v1/5d3a4213cf4f5b00014ea1db/1566802427746-GC0JCDWGK7G891LR2NQL/Australian-Biocommons-Logo-Horizontal-144dpi-Transparent.png"
-          />
-          <div class="text-l mt-2 font-medium tracking-tight text-gray-900">
-            Science Community Hub
+          <a routerLink="/">
+            <img
+              class="h-10 w-auto"
+              src="https://images.squarespace-cdn.com/content/v1/5d3a4213cf4f5b00014ea1db/1566802427746-GC0JCDWGK7G891LR2NQL/Australian-Biocommons-Logo-Horizontal-144dpi-Transparent.png"
+            />
+          </a>
+
+          <div class="ml-6 text-2xl font-normal tracking-tight text-gray-900">
+            Service Hub&ensp;\&ensp;<span class="font-semibold"
+              >Threatened Species Initiative</span
+            >
           </div>
         </div>
       </div>
@@ -138,12 +151,12 @@
         </div>
         <div class="flex flex-shrink-0 items-center">
           <img
-            class="block h-24 w-auto lg:hidden"
+            class="block h-20 w-auto lg:hidden"
             src="https://threatenedspeciesinitiative.com/wp-content/uploads/2020/07/TSIBPA_Logo_WEB-01.png"
             alt="TSI Logo"
           />
           <img
-            class="hidden h-24 w-auto lg:block"
+            class="hidden h-20 w-auto lg:block"
             src="https://threatenedspeciesinitiative.com/wp-content/uploads/2020/07/TSIBPA_Logo_WEB-01.png"
             alt="TSI Logo"
           />

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { directus } from 'src/app/services/directus';
-import { formatRelativeTime } from '../../../../../shared/utils/format-relative-time.js';
+//import { formatRelativeTime } from '../../../../../shared/utils/format-relative-time.js';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IDataset } from './home.interfaces.js';
@@ -117,7 +117,7 @@ export class HomePage implements OnInit {
     const formattedArticles = response.data.map((article) => {
       return {
         ...article,
-        publish_date: formatRelativeTime(new Date(article.publish_date)),
+        publish_date: new Date(article.publish_date)
       };
     });
 
