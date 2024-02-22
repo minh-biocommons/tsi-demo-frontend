@@ -21,10 +21,6 @@
   color: #205A86; 
 }
 
-.bg-footer {
-  background-color: #1D2944;
-}
-
 .hero {
   height: calc(100vh - 48px - 120px);
 }

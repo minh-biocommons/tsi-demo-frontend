@@ -15,6 +15,7 @@ import {
   faChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { ViewportScroller } from '@angular/common';
+import { directus } from 'src/app/services/directus';
 
 const sections = 'hero,grid,resources,about';
 
@@ -28,6 +29,9 @@ export class LoginComponent implements OnInit {
   faChevronUp = faChevronUp;
   faArrowRight = faArrowRight;
   faAnglesUp = faAnglesUp;
+  heroData!: any;
+  resourcesData!: any;
+  aboutData!: any;
 
   windowScrolled = false;
   currentSectionIndex = 0;
@@ -61,6 +65,16 @@ export class LoginComponent implements OnInit {
     window.addEventListener('scroll', () => {
       this.windowScrolled = window.scrollY !== 0;
     });
+
+    this.getContent();
+  }
+
+  async getContent() {
+    this.heroData = await directus.items('hero').readByQuery({ sort: ['id'] });
+    this.resourcesData = await directus.items('resources_cards').readByQuery({ sort: ['id'] });
+    this.aboutData = await directus.items('about').readByQuery({ sort: ['id'] });
+
+    console.log(this.resourcesData);
   }
 
   isElementInViewport(element: HTMLElement): boolean {
@@ -69,9 +83,10 @@ export class LoginComponent implements OnInit {
       window.innerHeight || document.documentElement.clientHeight;
 
     return !(
-      Math.floor(100 - (((rect.top >= 0 ? 0 : rect.top) / +-rect.height) * 100)) < 70 ||
+      Math.floor(100 - ((rect.top >= 0 ? 0 : rect.top) / +-rect.height) * 100) <
+        70 ||
       Math.floor(100 - ((rect.bottom - windowHeight) / rect.height) * 100) < 70
-    )
+    );
   }
 
   scrollToElement($element: HTMLElement): void {
@@ -92,13 +107,13 @@ export class LoginComponent implements OnInit {
       this.scrollToTop();
     } else {
       this.currentSectionIndex -= 1;
-    this.sections
-      .toArray()
-      [this.currentSectionIndex].nativeElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
+      this.sections
+        .toArray()
+        [this.currentSectionIndex].nativeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
     }
   }
 

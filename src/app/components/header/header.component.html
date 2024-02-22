@@ -55,12 +55,18 @@
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
           <div *ngIf="!isLoggedIn" class="relative ml-4">
-            <div class="text-sm font-light text-white mt-0.5">
-              <a
-                href="https://directus.test.biocommons.org.au/backend/auth/login/cilogon?redirect=http://localhost:4200/login"
-                >Sign in</a
-              >&ensp;/&ensp;
-              <a routerLink="/signup">Register</a>
+            <div
+              class="text-sm font-light text-white w-72 mt-0.5 flex justify-between"
+            >
+              <a href="">About</a>
+              <a href="">Contact</a>
+              <div>
+                <a
+                  href="https://directus.test.biocommons.org.au/backend/auth/login/cilogon?redirect=http://localhost:4200/login"
+                  >Sign in</a
+                >&ensp;/&ensp;
+                <a routerLink="/signup">Register</a>
+              </div>
             </div>
           </div>
           <div *ngIf="isLoggedIn" class="relative ml-4">
@@ -127,8 +133,8 @@
         >
           <a routerLink="/">
             <img
-              class="h-10 w-auto"
-              src="https://images.squarespace-cdn.com/content/v1/5d3a4213cf4f5b00014ea1db/1566802427746-GC0JCDWGK7G891LR2NQL/Australian-Biocommons-Logo-Horizontal-144dpi-Transparent.png"
+              class="h-8 w-auto"
+              src="assets/Group 136.svg"
             />
           </a>
 

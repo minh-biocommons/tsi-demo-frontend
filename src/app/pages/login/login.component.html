@@ -28,11 +28,9 @@
       <div
         class="rounded-full flex flex-col items-center text-center justify-center bg-white h-96 w-96 px-12 pt-18"
       >
-        <div class="font-semibold text-4xl">Centralised your eResearch</div>
+        <div class="font-semibold text-4xl">{{ heroData?.data?.title }}</div>
         <p class="my-4">
-          Threatened Species Initiative (TSI) Service Hub provides
-          fit-for-purpose tools, pipelines, training materials and service
-          integrations for your research.
+          {{ heroData?.data?.content }}
         </p>
         <div>
           <a
@@ -211,7 +209,11 @@
     </div>
   </div>
 
-  <div #resources id="test2" class="px-36 flex flex-col items-center justify-center h-screen">
+  <div
+    #resources
+    id="test2"
+    class="px-36 flex flex-col items-center justify-center h-screen"
+  >
     <!-- <div
       class="flex flex-col justify-center items-center -mt-6 w-12 h-12 rounded-full bg-button"
     >
@@ -225,66 +227,29 @@
     </div>
 
     <div class="grid grid-flow-row-dense grid-cols-4 gap-4 w-full">
-      <div class="bg-gray-custom p-6 rounded-lg pb-24">
+      <div
+        *ngFor="let resource of resourcesData?.data"
+        class="bg-gray-custom p-6 rounded-lg pb-24"
+      >
         <div class="flex justify-end">
           <a href="">
             <img src="assets/Icon core-external-link.svg" class="h-6 w-6" />
           </a>
         </div>
         <div class="bg-white rounded-full h-36 w-36 -mt-28 mx-auto">
-          <img src="assets/Group 147@2x.png" />
+          <img
+            src="{{
+              'https://directus.test.biocommons.org.au/backend/assets/' +
+                resource.image
+            }}"
+          />
         </div>
         <div class="mt-12 mb-6 text-2xl font-semibold tracking-tight">
-          Genome assembly procedure
+          {{ resource.title }}
         </div>
         <p>
-          An overview of genome assembly procedure from data QC to annotation.
+          {{ resource.content }}
         </p>
-      </div>
-      <div class="bg-gray-custom p-6 rounded-lg pb-24">
-        <div class="flex justify-end">
-          <a href="">
-            <img src="assets/Icon core-external-link.svg" class="h-6 w-6" />
-          </a>
-        </div>
-        <div class="bg-white rounded-full h-36 w-36 -mt-28 mx-auto">
-          <img src="assets/Ellipse 40@2x.png" />
-        </div>
-        <div class="mt-12 mb-6 text-2xl font-semibold tracking-tight">
-          Moving data
-        </div>
-        <p>
-          Learn about data-moving methods of various file types and tools to
-          use.
-        </p>
-      </div>
-      <div class="bg-gray-custom p-6 rounded-lg pb-24">
-        <div class="flex justify-end">
-          <a href="">
-            <img src="assets/Icon core-external-link.svg" class="h-6 w-6" />
-          </a>
-        </div>
-        <div class="bg-white rounded-full h-36 w-36 -mt-28 mx-auto">
-          <img src="assets/Group 148@2x.png" />
-        </div>
-        <div class="mt-12 mb-6 text-2xl font-semibold tracking-tight">
-          Genome HiFi assembly and annotation user guide
-        </div>
-        <p>An easy-to-follow online user guide tailored for TSI researchers.</p>
-      </div>
-      <div class="bg-gray-custom p-6 rounded-lg pb-24">
-        <div class="flex justify-end">
-          <a href="">
-            <img src="assets/Icon core-external-link.svg" class="h-6 w-6" />
-          </a>
-        </div>
-        <div class="bg-white rounded-full h-36 w-36 -mt-28 mx-auto">
-          <img src="assets/Group 149@2x.png" />
-        </div>
-        <div class="mt-12 mb-6 text-2xl font-semibold tracking-tight">
-          TSI best practice guidelines
-        </div>
-        <p>A collection of YouTube videos on methods, tools and techniques.</p>
       </div>
     </div>
   </div>
@@ -303,13 +268,11 @@
     <div class="flex justify-between py-24 px-36">
       <div class="w-2/5">
         <img src="assets/Project_152-06@2x.png" class="h-72 w-auto" />
-        <div class="mt-12 mb-6 text-4xl font-semibold">The Service Hub</div>
+        <div class="mt-12 mb-6 text-4xl font-semibold">
+          {{ aboutData?.data?.title }}
+        </div>
         <p>
-          Service hub by the Australian Biocommons is a world-class eResearch
-          infrastructure purpose-built for national life-sciences research
-          communities and consortiums. It is a system that provides
-          fit-for-purpose platform access, tools, content and member management
-          from a single entry point.
+          {{ aboutData?.data?.content }}
         </p>
       </div>
       <div class="w-1/2">
@@ -318,7 +281,48 @@
     </div>
   </div>
 
-  <div #footer class="py-36 bg-footer"></div>
+  <div #footer class="py-24 bg-gray-custom">
+    <div class="flex flex-col justify-center">
+      <div class="flex mx-auto mb-12">
+        <img
+          class="h-12 w-auto mr-12 mt-2"
+          src="https://images.squarespace-cdn.com/content/v1/5d3a4213cf4f5b00014ea1db/1566802427746-GC0JCDWGK7G891LR2NQL/Australian-Biocommons-Logo-Horizontal-144dpi-Transparent.png"
+        />
+        <img
+          class="h-16 w-auto"
+          src="https://scienceandtechnologyaustralia.org.au/wp-content/uploads/2016/12/BIO-RGB_Full-POS.png"
+        />
+      </div>
+      <div class="mx-auto text-sm text-center">
+        <p class="mb-6">
+          <a
+            href="https://www.biocommons.org.au/homepage"
+            class="underline underline-offset-4 decoration-dotted"
+            >The Australian BioCommons</a
+          >
+          is supported by
+          <a
+            href="https://bioplatforms.com/"
+            class="underline underline-offset-4 decoration-dotted"
+            >Bioplatforms Australia</a
+          >
+        </p>
+        <p>
+          <a
+            href="https://bioplatforms.com/"
+            class="underline underline-offset-4 decoration-dotted"
+            >Bioplatforms Australia</a
+          >
+          is enabled by
+          <a
+            href="https://www.education.gov.au/ncris"
+            class="underline underline-offset-4 decoration-dotted"
+            >NCRIS</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
   <!-- <h1 class="text-center text-5xl font-bold tracking-tight text-gray-900">
     Welcome to the Threatened Species Initiative Community Portal
   </h1>

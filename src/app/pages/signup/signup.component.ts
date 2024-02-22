@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
       this.getContent();
     }
   }
-
+  
   async getContent() {
     this.content = await directus
       .items('signup_pages')

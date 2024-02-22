@@ -57,7 +57,6 @@ export class HomePage implements OnInit {
     });
     console.log(directus.folders);
     console.log(directus.collections.readAll());
-    
   }
 
   selectTab(tabIndex: number): void {
