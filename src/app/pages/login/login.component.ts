@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
   heroData!: any;
   resourcesData!: any;
   aboutData!: any;
+  gridToolsData!: any;
+  gridTSIData!: any;
 
   windowScrolled = false;
   currentSectionIndex = 0;
@@ -72,9 +74,8 @@ export class LoginComponent implements OnInit {
   async getContent() {
     this.heroData = await directus.items('hero').readByQuery({ sort: ['id'] });
     this.resourcesData = await directus.items('resources_cards').readByQuery({ sort: ['id'] });
-    this.aboutData = await directus.items('about').readByQuery({ sort: ['id'] });
-
-    console.log(this.resourcesData);
+    this.gridToolsData = await directus.items('grid_tools').readByQuery({ sort: ['id'] });
+    this.gridTSIData = await directus.items('grid_tsi').readByQuery({ sort: ['id'] });
   }
 
   isElementInViewport(element: HTMLElement): boolean {

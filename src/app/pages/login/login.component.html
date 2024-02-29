@@ -1,4 +1,4 @@
-<div class="fixed bottom-6 right-6 flex flex-col">
+<div class="hidden sm:fixed bottom-6 right-6 sm:flex flex-col">
   <button
     (click)="scrollToTop()"
     [ngClass]="{ 'opacity-100': windowScrolled }"
@@ -21,12 +21,12 @@
 </div>
 
 <div>
-  <div #hero class="hero px-36 flex flex-col justify-end">
+  <div #hero class="hero sm:px-24 2xl:px-36 flex flex-col justify-end">
     <div
       class="bg-hero bg-no-repeat bg-cover bg-center bg-fixed items-center justify-center flex flex-col pb-12"
     >
       <div
-        class="rounded-full flex flex-col items-center text-center justify-center bg-white h-96 w-96 px-12 pt-18"
+        class="rounded-full flex flex-col items-center text-center justify-center bg-white h-96 w-96 px-6 sm:px-12 pt-18"
       >
         <div class="font-semibold text-4xl">{{ heroData?.data?.title }}</div>
         <p class="my-4">
@@ -40,42 +40,49 @@
           >
         </div>
       </div>
-      <div class="flex justify-center w-full mt-12">
-        <div
-          class="rounded-full border border-[#88CEDA] items-center text-center w-36 h-36 bg-white flex flex-col justify-center mx-6 text-[#646261]"
-        >
-          <div class="font-semibold text-3xl">200</div>
-          <div class="uppercase text-sm">Members</div>
+      <div class="sm:flex sm:justify-center w-full sm:mt-12">
+        <div class="flex justify-around">
+          <div
+            class="rounded-full border border-[#88CEDA] items-center text-center w-28 h-28 sm:w-36 sm:h-36 bg-white flex flex-col justify-center sm:mx-6 text-[#646261]"
+          >
+            <div class="font-semibold sm:text-3xl">200</div>
+            <div class="uppercase text-sm">Members</div>
+          </div>
+          <div
+            class="rounded-full border border-[#88CEDA] items-center text-center w-28 h-28 sm:w-36 sm:h-36 bg-white flex flex-col justify-center sm:mx-6 text-[#646261]"
+          >
+            <div class="font-semibold sm:text-3xl">512</div>
+            <div class="uppercase text-sm">Workflows</div>
+          </div>
+          <div
+            class="rounded-full border border-[#88CEDA] items-center text-center w-28 h-28 sm:w-36 sm:h-36 bg-white flex flex-col justify-center sm:mx-6 text-[#646261]"
+          >
+            <div class="font-semibold sm:text-3xl">1.7K</div>
+            <div class="uppercase text-sm">Tools</div>
+          </div>
         </div>
-        <div
-          class="rounded-full border border-[#88CEDA] items-center text-center w-36 h-36 bg-white flex flex-col justify-center mx-6 text-[#646261]"
-        >
-          <div class="font-semibold text-3xl">512</div>
-          <div class="uppercase text-sm">Workflows</div>
-        </div>
-        <div
-          class="rounded-full border border-[#88CEDA] items-center text-center w-36 h-36 bg-white flex flex-col justify-center mx-6 text-[#646261]"
-        >
-          <div class="font-semibold text-3xl">1.7K</div>
-          <div class="uppercase text-sm">Tools</div>
-        </div>
-        <div
-          class="rounded-full border border-[#88CEDA] items-center text-center w-36 h-36 bg-white flex flex-col justify-center mx-6 text-[#646261]"
-        >
-          <div class="font-semibold text-3xl">5</div>
-          <div class="uppercase text-sm">Services</div>
-        </div>
-        <div
-          class="rounded-full border border-[#88CEDA] items-center text-center w-36 h-36 bg-white flex flex-col justify-center mx-6 text-[#646261]"
-        >
-          <div class="font-semibold text-3xl">2.5K</div>
-          <div class="uppercase text-sm">Datasets</div>
+        <div class="flex justify-center mt-2 sm:mt-0">
+          <div
+            class="rounded-full border border-[#88CEDA] items-center text-center w-28 h-28 sm:w-36 sm:h-36 bg-white flex flex-col justify-center mx-2 sm:mx-6 text-[#646261]"
+          >
+            <div class="font-semibold sm:text-3xl">5</div>
+            <div class="uppercase text-sm">Services</div>
+          </div>
+          <div
+            class="rounded-full border border-[#88CEDA] items-center text-center w-28 h-28 sm:w-36 sm:h-36 bg-white flex flex-col justify-center mx-2 sm:mx-6 text-[#646261]"
+          >
+            <div class="font-semibold sm:text-3xl">2.5K</div>
+            <div class="uppercase text-sm">Datasets</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div #grid class="bg-gray-custom pb-24 px-36 flex flex-col items-center">
+  <div
+    #grid
+    class="bg-gray-custom sm:pb-24 sm:px-24 2xl:px-36 flex flex-col items-center"
+  >
     <!-- <div
       class="flex flex-col justify-center items-center -mt-6 w-12 h-12 rounded-full bg-button"
     >
@@ -84,11 +91,16 @@
       </button>
     </div> -->
 
-    <div class="my-12 text-4xl font-semibold">Things you may need to know</div>
+    <div class="sm:my-12 text-4xl font-semibold text-center my-24">
+      Things you may need to know
+    </div>
 
-    <div class="grid grid-cols-4 gap-4 w-full">
-      <div class="bg-white col-span-2 flex">
-        <img src="https://directus.test.biocommons.org.au/backend/assets/ba9ad630-604e-4ce0-a770-415890d899c2" class="h-72 w-auto" />
+    <div class="sm:grid sm:grid-cols-4 sm:gap-4 w-full">
+      <div class="bg-white sm:col-span-2 sm:flex">
+        <img
+          src="https://directus.test.biocommons.org.au/backend/assets/ba9ad630-604e-4ce0-a770-415890d899c2"
+          class="w-full sm:h-72 sm:w-auto"
+        />
         <div class="p-6">
           <div class="font-semibold text-2xl mb-4 tracking-tight">
             Welcome to TSI Service Hub
@@ -101,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-white row-span-2 flex flex-col p-6 justify-between">
+      <div class="bg-white sm:row-span-2 flex flex-col p-6 justify-between">
         <div>
           <div class="font-semibold text-2xl mb-4 tracking-tight">
             The current species that the TSI is supporting
@@ -110,7 +122,10 @@
             Find out if your species has a reference genome or other genetic
             resources available.
           </p>
-          <a href="" class="font-semibold text-link hover:opacity-80 ease-in-out duration-200">
+          <a
+            href=""
+            class="font-semibold text-link hover:opacity-80 ease-in-out duration-200"
+          >
             See the latest reference genome list
             <fa-icon
               [icon]="faArrowRight"
@@ -121,77 +136,72 @@
         </div>
         <img
           src="https://directus.test.biocommons.org.au/backend/assets/46d2546b-76d4-4da1-b8e6-8ffa3c7ad495"
-          class="mx-auto h-64 w-auto"
+          class="mx-auto h-64 w-auto mt-12 sm:mt-0"
         />
       </div>
       <div class="bg-white p-6">
         <div class="font-semibold text-2xl mb-4 tracking-tight">
           TSI fit-for-purpose tools and compute
         </div>
-        <ul class="list-disc ml-4">
+        <ul *ngFor="let item of gridToolsData?.data" class="list-disc ml-4">
           <li>
-            <a href="" class="text-link hover:opacity-80 ease-in-out duration-200">Genome assembly and annotation</a>
-          </li>
-          <li>
-            <a href="" class="text-link hover:opacity-80 ease-in-out duration-200"
-              >Assess the quality of your genome assembly</a
+            <a
+              href="{{ item.url }}"
+              class="text-link hover:opacity-80 ease-in-out duration-200"
+              >{{ item?.title }}</a
             >
-          </li>
-          <li>
-            <a href="" class="text-link hover:opacity-80 ease-in-out duration-200">Data upload</a>
-          </li>
-          <li>
-            <a href="" class="text-link hover:opacity-80 ease-in-out duration-200">Bioinformatics file formats</a>
-          </li>
-          <li>
-            <a href="" class="text-link hover:opacity-80 ease-in-out duration-200">Computational resources</a>
           </li>
         </ul>
       </div>
-      <div class="bg-white col-span-2 flex justify-between p-6">
+      <div class="bg-white sm:col-span-2 sm:flex sm:justify-between p-6">
         <div>
           <div class="font-semibold text-2xl mb-4 tracking-tight">
             Who is eligible to apply?
           </div>
           <ul class="list-disc ml-4">
-            <li class="hover:opacity-80 ease-in-out duration-200">Genome biologists</li>
-            <li class="hover:opacity-80 ease-in-out duration-200">Population biologists</li>
-            <li class="hover:opacity-80 ease-in-out duration-200">Bioinformaticians</li>
-            <li class="hover:opacity-80 ease-in-out duration-200">Population geneticists</li>
-            <li class="hover:opacity-80 ease-in-out duration-200">Ecologists</li>
-            <li class="hover:opacity-80 ease-in-out duration-200">Zoologists</li>
+            <li class="hover:opacity-80 ease-in-out duration-200">
+              Genome biologists
+            </li>
+            <li class="hover:opacity-80 ease-in-out duration-200">
+              Population biologists
+            </li>
+            <li class="hover:opacity-80 ease-in-out duration-200">
+              Bioinformaticians
+            </li>
+            <li class="hover:opacity-80 ease-in-out duration-200">
+              Population geneticists
+            </li>
+            <li class="hover:opacity-80 ease-in-out duration-200">
+              Ecologists
+            </li>
+            <li class="hover:opacity-80 ease-in-out duration-200">
+              Zoologists
+            </li>
           </ul>
         </div>
         <img
           src="https://directus.test.biocommons.org.au/backend/assets/0f13cdc5-95ac-45de-8dce-d027091c9ec0"
-          class="h-60 w-auto"
+          class="mt-6 -ml-6 sm:h-60 sm:w-auto sm:m-0"
         />
       </div>
-      <div class="bg-white row-span-2 p-6">
+      <div class="bg-white sm:row-span-2 p-6">
         <div class="font-semibold text-2xl mb-4 tracking-tight">
           Check out the TSI standardised guidelines, supported projects and
           policies
         </div>
-        <ul class="list-disc ml-4">
+        <ul *ngFor="let item of gridTSIData?.data" class="list-disc ml-4">
           <li>
-            <a href="" class="text-link">Sample collection guidelines</a>
-          </li>
-          <li>
-            <a href="" class="text-link">Data policy</a>
-          </li>
-          <li>
-            <a href="" class="text-link">Communication policy</a>
-          </li>
-          <li>
-            <a href="" class="text-link">Supported projects</a>
+            <a href="{{ item.url }}" class="text-link">{{ item?.title }}</a>
           </li>
         </ul>
         <img
           src="https://directus.test.biocommons.org.au/backend/assets/f5c43d57-ffff-4721-b757-ebcef217cc12"
-          class="h-60 w-auto"
+          class="sm:h-60 sm:w-auto"
         />
       </div>
-      <div class="bg-white col-span-3 p-6 border-l-8 border-[#ED087C]">
+      <div
+        class="sm:col-span-3 p-6 border-l-8 border-[#ED087C] bg-gray-100 sm:bg-white"
+      >
         <div class="font-semibold text-2xl mb-4 tracking-tight">
           How to apply?
         </div>
@@ -212,7 +222,7 @@
   <div
     #resources
     id="test2"
-    class="px-36 flex flex-col items-center justify-center h-screen"
+    class="px-12 sm:px-24 2xl:px-36 flex flex-col items-center justify-center sm:h-screen"
   >
     <!-- <div
       class="flex flex-col justify-center items-center -mt-6 w-12 h-12 rounded-full bg-button"
@@ -222,18 +232,21 @@
       </button>
     </div> -->
 
-    <div class="mb-24 text-4xl font-semibold">
+    <div class="mb-24 text-4xl font-semibold mt-24 sm:mt-0">
       Specialised resources and supports
     </div>
 
-    <div class="grid grid-flow-row-dense grid-cols-4 gap-4 w-full">
+    <div class="sm:grid sm:grid-flow-row-dense sm:grid-cols-4 sm:gap-4 w-full">
       <div
         *ngFor="let resource of resourcesData?.data"
-        class="bg-gray-custom p-6 rounded-lg pb-24"
+        class="bg-gray-custom p-6 rounded-lg pb-24 sm:mb-0 mb-24"
       >
         <div class="flex justify-end">
           <a href="">
-            <img src="assets/Icon core-external-link.svg" class="h-6 w-6 hover:opacity-60 ease-in-out duration-200" />
+            <img
+              src="assets/Icon core-external-link.svg"
+              class="h-6 w-6 hover:opacity-60 ease-in-out duration-200"
+            />
           </a>
         </div>
         <div class="bg-white rounded-full h-36 w-36 -mt-28 mx-auto">
@@ -264,10 +277,13 @@
     </button>
   </div> -->
 
-  <div #about class="flex flex-col justify-center h-screen">
-    <div class="flex justify-between py-24 px-36">
-      <div class="w-2/5">
-        <img src="https://directus.test.biocommons.org.au/backend/assets/bfc8a55a-c913-440e-9b23-a74468e69697" class="h-72 w-auto" />
+  <div #about class="flex flex-col justify-center sm:h-screen">
+    <div class="sm:flex sm:justify-between sm:py-24 sm:px-24 2xl:px-36 p-6">
+      <div class="sm:w-2/5">
+        <img
+          src="https://directus.test.biocommons.org.au/backend/assets/bfc8a55a-c913-440e-9b23-a74468e69697"
+          class="sm:h-72 sm:w-auto mt-24 sm:mt-0"
+        />
         <div class="mt-12 mb-6 text-4xl font-semibold">
           {{ aboutData?.data?.title }}
         </div>
@@ -275,21 +291,23 @@
           {{ aboutData?.data?.content }}
         </p>
       </div>
-      <div class="w-1/2">
-        <img src="https://directus.test.biocommons.org.au/backend/assets/3abbdb6c-b85a-4932-8a43-91eaba068537" />
+      <div class="sm:w-1/2 my-12 sm:my-0">
+        <img
+          src="https://directus.test.biocommons.org.au/backend/assets/3abbdb6c-b85a-4932-8a43-91eaba068537"
+        />
       </div>
     </div>
   </div>
 
-  <div #footer class="py-24 bg-gray-custom">
+  <div #footer class="py-24 bg-gray-custom px-6 sm:px-0">
     <div class="flex flex-col justify-center">
       <div class="flex mx-auto mb-12">
         <img
-          class="h-12 w-auto mr-12 mt-2"
+          class="sm:h-12 h-8 w-auto sm:mr-12 mr-6 mt-2"
           src="https://images.squarespace-cdn.com/content/v1/5d3a4213cf4f5b00014ea1db/1566802427746-GC0JCDWGK7G891LR2NQL/Australian-Biocommons-Logo-Horizontal-144dpi-Transparent.png"
         />
         <img
-          class="h-16 w-auto"
+          class="sm:h-16 h-12 w-auto"
           src="https://scienceandtechnologyaustralia.org.au/wp-content/uploads/2016/12/BIO-RGB_Full-POS.png"
         />
       </div>

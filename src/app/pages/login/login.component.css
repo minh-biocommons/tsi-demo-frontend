@@ -2,13 +2,6 @@
   flex-grow: 1;
 }
 
-.bg-hero {
-  background: url('../../../assets/big-genomic-data-visualization_green.png');
-  width: 100%;
-  max-width: 100%;
-  background-size: 100%;
-}
-
 .bg-button {
   background-color: #17567E;
 }
@@ -21,6 +14,15 @@
   color: #205A86; 
 }
 
-.hero {
-  height: calc(100vh - 48px - 120px);
+@media (min-width: 640px) {
+  .bg-hero {
+    background: url('../../../assets/big-genomic-data-visualization_green.png') no-repeat;
+    width: 100%;
+    max-width: 100%;
+    background-size: 100%;
+  }
+
+  .hero {
+    height: calc(100vh - 48px - 120px);
+  }
 }
